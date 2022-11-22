@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y \
     unzip
 
 WORKDIR /root/src
-RUN chmod 777 .
 RUN pip3 install --upgrade pip
 RUN pip3 install -U --no-cache-dir gdown --pre
 RUN pip3 install virtualenv

@@ -9,3 +9,27 @@ services:
     working_dir: /root/src/
     volumes:
       - ./src:/root/src/
+
+# {{ -- TODO -- }}
+# version: '3'
+# services:
+#   python:
+#     build: .
+#     tty: true
+#     container_name: python
+#     image: ubuntu:18.04
+#     user: root
+#     working_dir: /root/src/python
+#     volumes:
+#       - ./src/python:/root/src/python
+  # nginx:
+  #   build: .
+  #   tty: true
+  #   container_name: nginx
+  #   image: nginx:latest
+  #   user: root
+  #   ports:
+  #     - "80:80"
+  #   working_dir: /root/src/nginx
+  #   volumes:
+  #     - ./src/nginx:/root/src/nginx
