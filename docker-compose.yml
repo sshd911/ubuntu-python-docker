@@ -6,6 +6,6 @@ services:
     container_name: web
     image: ubuntu:18.04
     user: root
-    working_dir: /root/
+    working_dir: /root/src/
     volumes:
       - ./src:/root/src/
