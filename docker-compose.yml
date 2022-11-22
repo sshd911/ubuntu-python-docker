@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    build: .
+    tty: true
+    container_name: web
+    image: ubuntu:18.04
+    user: root
+    working_dir: /root/
+    volumes:
+      - ./src:/root/src/
