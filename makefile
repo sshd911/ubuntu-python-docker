@@ -16,7 +16,7 @@ exec:
 clone:
 	@git clone https://github.com/anandpawara/Real_Time_Image_Animation.git ./src
 	@docker-compose exec web virtualenv env
-	@cd src;source env/bin/activate; cd ..;
+	@cd src && source env/bin/activate && cd ..
 	@docker-compose exec web pip3 install -r requirements.txt
 install_pip:
 	@docker-compose exec web pip3 install torch===1.13.0 torchvision -f https://download.pytorch.org/whl/cu100/torch_stable.html
