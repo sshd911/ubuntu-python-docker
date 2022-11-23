@@ -34,6 +34,6 @@ install_model:
 
 # run command for python
 run_camera:
-	@docker-compose exec python3 ./image_animation.py -i ./Inputs/feynman.jpeg -c ./extract/real_time_model/vox-adv-cpk.pth.tar
+	@docker-compose exec web python3 image_animation.py -i ./Inputs/feynman.jpeg -c ./extract/real_time_model/vox-adv-cpk.pth.tar
 run_file:
-	@docker-compose exec python3 ./image_animation.py -i ./Inputs/feynman.jpeg -c ./extract/real_time_model/vox-adv-cpk.pth.tar -v video.mp4
+	@docker-compose exec web python3 image_animation.py -i ./Inputs/feynman.jpeg -c ./extract/real_time_model/vox-adv-cpk.pth.tar -v video.mp4
