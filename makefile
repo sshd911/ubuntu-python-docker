@@ -6,6 +6,7 @@ reload:
 	@docker-compose down
 	@docker-compose up -d
 rebuild:
+	@rm -rf src
 	@docker-compose down
 	@docker-compose rm 
 	@docker-compose build --no-cache
@@ -19,7 +20,7 @@ clone:
 	@cd src && source env/bin/activate && cd ..
 	@docker-compose exec web pip3 install -r requirements.txt
 install_pip:
-	@docker-compose exec web pip3 install torch===1.13.0 torchvision -f https://download.pytorch.org/whl/cu100/torch_stable.html
+	@docker-compose exec web pip3 install torch===1.8.0 torchvision -f https://download.pytorch.org/whl/cu100/torch_stable.html
 	@docker-compose exec web pip3 install imageio scikit-image scikit-learn pandas matplotlib pyyaml opencv-python
 install_model:
 	@docker-compose exec web gdown --id 1wCzJP1XJNB04vEORZvPjNz6drkXm5AUK
