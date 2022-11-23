@@ -1,3 +1,4 @@
+# docker-compose command
 up:
 	@docker-compose up -d
 down:
@@ -14,6 +15,7 @@ rebuild:
 exec:
 	@docker-compose exec web /bin/bash
 
+# setup command after container has built
 clone:
 	@git clone https://github.com/anandpawara/Real_Time_Image_Animation.git ./src
 	@docker-compose exec web virtualenv env
@@ -26,3 +28,9 @@ install_model:
 	@docker-compose exec web gdown --id 1wCzJP1XJNB04vEORZvPjNz6drkXm5AUK
 	@docker-compose exec web unzip checkpoints.zip -d ./extract
 	@docker-compose exec web rm checkpoints.zip
+
+# run command for python
+run_camera:
+	@docker-compose exec python3 ./image_animation.py -i ./Inputs/feynman.jpeg -c ./extract/real_time_model/vox-adv-cpk.pth.tar
+run_file:
+	@docker-compose exec python3 ./image_animation.py -i ./Inputs/feynman.jpeg -c ./extract/real_time_model/vox-adv-cpk.pth.tar -v video.mp4
